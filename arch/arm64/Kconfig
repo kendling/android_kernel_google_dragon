@@ -415,6 +415,15 @@ config CMDLINE_FORCE
 	  command-line options your boot loader passes to the kernel.
 endchoice
 
+config BUILD_ARM64_FIT_IMAGE
+       bool "Build a Image.fit by default"
+       depends on OF
+       help
+         Enabling this option will cause a FIT image with an embedded
+         kernel and list of DTBs to be built by default (instead of a
+         standalone Image)
+         The image will built in arch/arm64/boot/Image.fit
+
 config BUILD_ARM64_APPENDED_DTB_IMAGE
 	bool "Build a concatenated Image.gz/dtb by default"
 	depends on OF
